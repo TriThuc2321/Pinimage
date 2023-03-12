@@ -1,17 +1,18 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { connect } from 'mongoose';
 import { config } from 'dotenv';
 import cloudinary from 'cloudinary';
+import mongoose from 'mongoose';
 
-import { openAIRoute } from './routes/index.js';
+import { openAIRoute, userRoute } from './routes/index.js';
 
 config();
 
 const app = express();
 
 const PORT = process.env.PORT || 6000;
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors(), bodyParser.json());
 
 app.all('/', (req, res, next) => {
@@ -37,7 +38,9 @@ cloudinary.config({
 //     console.log(err);
 // });
 
-connect(process.env.URL_MONGODB)
+mongoose.set('strictQuery', false);
+mongoose
+    .connect(process.env.URL_MONGODB)
     .then(() => {
         console.log('MongoDB Connected!');
         app.listen(PORT, () => {
@@ -49,6 +52,7 @@ connect(process.env.URL_MONGODB)
     });
 
 app.use('/api/v1/openAI', openAIRoute);
+app.use('/api/v1/user', userRoute);
 
 app.get('/', async (req, res) => {
     res.status(200).json({
