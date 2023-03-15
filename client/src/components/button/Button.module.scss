@@ -1,0 +1,50 @@
+.button {
+    background-color: #1b1c31;
+    color: white;
+    padding: 4px 16px;
+    min-width: 100px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.outline {
+    background-color: transparent;
+    border: #1b1c31 1px solid;
+    color: #1b1c31;
+}
+
+.outline:hover {
+    background-color: #1b1c31;
+    color: white;
+}
+
+.loading {
+    cursor: wait;
+    background-color: #393b59;
+    color: white;
+    pointer-events: none;
+}
+
+.loading:hover {
+    cursor: wait;
+    background-color: #393b59;
+    color: white;
+    pointer-events: none;
+}
+
+.disable {
+    background-color: #6e6e6e;
+    pointer-events: none;
+    cursor: alias;
+}
+
+.disable:hover {
+    cursor: alias;
+    background-color: #6e6e6e;
+    pointer-events: none;
+    color: white;
+}
