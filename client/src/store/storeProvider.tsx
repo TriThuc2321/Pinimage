@@ -5,7 +5,7 @@ import { StoreContext } from './storeContext';
 import { IStore, IUser } from '~/interfaces';
 import { Loader } from '~/pages';
 import { storeReducer, EStoreAction } from './storeReducer';
-import { getUserByEmail } from '~/services/user';
+import { getUserByEmail } from '~/services/apis/user';
 
 interface ProviderProps {
     children: ReactNode;

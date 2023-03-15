@@ -1,5 +1,5 @@
 import { INewUser } from '~/interfaces';
-import { request } from './request';
+import { request } from '../request';
 
 const url = 'user';
 const createUser = async (user: INewUser) => await request(url, 'POST', user);
