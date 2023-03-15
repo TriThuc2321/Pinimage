@@ -7,7 +7,7 @@ dotenv.config();
 const router = express.Router();
 
 const configuration = new Configuration({
-    apiKey: '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',
+    apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
@@ -28,10 +28,13 @@ router.route('/').post(async (req, res) => {
         });
 
         const image = aiResponse.data.data[0].b64_json;
-        res.status(200).json({ photo: image });
+        res.status(200).json({ data: `data:image/jpeg;base64,${image}`, status: 'SUCCESS' });
     } catch (error) {
         console.error(error);
-        res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+        res.status(500).json({
+            status: 'ERROR',
+            message: error?.response.data.error.message || 'Something went wrong',
+        });
     }
 });
 
