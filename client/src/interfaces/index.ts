@@ -8,8 +8,16 @@ interface INewUser {
 interface IUser extends INewUser {
     _id: string;
 }
+
+interface IPost {
+    _id: string;
+    prompt: string;
+    url: string;
+    host?: IUser;
+    view?: number;
+}
 interface IStore {
     user: IUser;
 }
 
-export type { IUser, INewUser, IStore };
+export type { IUser, INewUser, IPost, IStore };

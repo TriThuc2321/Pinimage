@@ -6,3 +6,5 @@ export { default as Favorite } from './favorite';
 export { default as MyPost } from './myPost';
 export { default as Header } from './header';
 export { default as NewPost } from './newPost';
+export { default as Discover } from './discover';
+export { default as ListImages } from './listImages';
