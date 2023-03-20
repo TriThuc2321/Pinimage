@@ -8,3 +8,4 @@ export { default as Header } from './header';
 export { default as NewPost } from './newPost';
 export { default as Discover } from './discover';
 export { default as ListImages } from './listImages';
+export { default as DotSpinner } from './dotSpinner';

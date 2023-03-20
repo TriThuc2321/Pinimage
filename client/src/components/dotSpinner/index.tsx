@@ -1,6 +1,6 @@
 import './styles.css';
 
-function DotSpinner({ className }: { className: string }) {
+function DotSpinner({ className }: { className?: string }) {
     return (
         <div className={`dot-spinner ${className}`}>
             <div className="dot-spinner__dot"></div>

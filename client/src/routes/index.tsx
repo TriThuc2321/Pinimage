@@ -1,7 +1,16 @@
+import { lazy, Suspense } from 'react';
+
 import { Outlet, createBrowserRouter } from 'react-router-dom';
-import { Home, Login, Error } from '~/pages';
 import { StoreProvider } from '~/store/storeProvider';
-import { Dashboard, Favorite, MyPost, NewPost } from '~/components';
+import { DotSpinner } from '~/components';
+
+const Home = lazy(() => import('~/pages/home'));
+const Login = lazy(() => import('~/pages/login'));
+const Error = lazy(() => import('~/pages/error'));
+const Dashboard = lazy(() => import('~/components/dashboard'));
+const Favorite = lazy(() => import('~/components/favorite'));
+const MyPost = lazy(() => import('~/components/myPost'));
+const NewPost = lazy(() => import('~/components/newPost'));
 
 const AuthLayout = () => (
     <StoreProvider>
@@ -16,23 +25,43 @@ export default createBrowserRouter([
         children: [
             {
                 path: '/login',
-                element: <Login />,
+                element: (
+                    <Suspense fallback={<DotSpinner />}>
+                        <Login />
+                    </Suspense>
+                ),
             },
             {
                 path: '/',
-                element: <Home />,
+                element: (
+                    <Suspense fallback={<DotSpinner />}>
+                        <Home />
+                    </Suspense>
+                ),
                 children: [
                     {
                         path: '/',
-                        element: <Dashboard />,
+                        element: (
+                            <Suspense fallback={<DotSpinner />}>
+                                <Dashboard />
+                            </Suspense>
+                        ),
                     },
                     {
                         path: '/favorite',
-                        element: <Favorite />,
+                        element: (
+                            <Suspense fallback={<DotSpinner />}>
+                                <Favorite />
+                            </Suspense>
+                        ),
                     },
                     {
                         path: '/my-post',
-                        element: <MyPost />,
+                        element: (
+                            <Suspense fallback={<DotSpinner />}>
+                                <MyPost />
+                            </Suspense>
+                        ),
                     },
                     {
                         path: '/new-post',
