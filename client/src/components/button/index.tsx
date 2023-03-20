@@ -8,7 +8,7 @@ interface Props {
     outline?: boolean | null;
     status?: 'ACTIVE' | 'LOADING' | 'DISABLE';
     className?: string | null;
-    onClick: () => void;
+    onClick?: () => void;
     children?: React.ReactNode;
 }
 

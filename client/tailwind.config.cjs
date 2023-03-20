@@ -6,8 +6,10 @@ module.exports = {
     content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
     theme: {
         colors: {
-            primary: '#d64f64',
+            primary: '#a54150',
+            second: '#1a1a1c',
             blear: '#1a1a1c7c',
+            blear08: '#1a1a1cec',
             white: '#fff',
             black: '#000',
             unselected: '#6F767E',

@@ -1,50 +1,54 @@
 .button {
-    background-color: #1b1c31;
+    background-color: var(--primary-color);
     color: white;
     padding: 4px 16px;
     min-width: 100px;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
+.button:hover {
+    background-color: #dc6678;
+}
+
 .outline {
+    font-weight: 500;
     background-color: transparent;
-    border: #1b1c31 1px solid;
-    color: #1b1c31;
+    border: var(--primary-color) 1px solid;
+    color: var(--primary-color);
 }
 
 .outline:hover {
-    background-color: #1b1c31;
+    background-color: #dc6678;
     color: white;
 }
 
 .loading {
     cursor: wait;
-    background-color: #393b59;
+    background-color: #dc6678;
     color: white;
     pointer-events: none;
 }
 
 .loading:hover {
     cursor: wait;
-    background-color: #393b59;
+    background-color: #dc6678;
     color: white;
     pointer-events: none;
 }
 
 .disable {
-    background-color: #6e6e6e;
+    background-color: #dc6678;
     pointer-events: none;
     cursor: alias;
 }
 
 .disable:hover {
     cursor: alias;
-    background-color: #6e6e6e;
+    background-color: #dc6678;
     pointer-events: none;
     color: white;
 }
