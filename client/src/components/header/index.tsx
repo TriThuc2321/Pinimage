@@ -8,6 +8,20 @@ export default function Header() {
     const { pathname } = useLocation();
     const [showMenu, setShowMenu] = useState(false);
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     useEffect(() => setShowMenu(false), [pathname]);
 
     const menus = [
@@ -29,7 +43,12 @@ export default function Header() {
     ];
 
     return (
-        <div className="fixed top-0 left-0 right-0 flex justify-between items-center p-6 z-50">
+        <div
+            className={clsx([
+                { ['bg-second']: scrollPosition > 100 },
+                'fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-3 z-50',
+            ])}
+        >
             <div className="flex items-center cursor-pointer" onClick={() => window.location.reload()}>
                 <img
                     className="w-12 h-12"
