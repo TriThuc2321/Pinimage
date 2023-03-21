@@ -58,8 +58,8 @@ export default function Header() {
             <div className="flex tablet:hidden">
                 <Bars3Icon width={32} height={32} onClick={() => setShowMenu(!showMenu)} />
                 {showMenu && (
-                    <div className="bg-blear08 z-50 fixed top-20 left-0 right-0 bottom-0 text-white">
-                        {menus.map((item) => (
+                    <div className="bg-blear08 z-50 fixed top-20 left-0 right-0 bottom-0 text-white px-4">
+                        {[...menus, { id: '3', title: 'New post', pathname: '/new-post' }].map((item) => (
                             <Link to={item.pathname} key={item.id}>
                                 <p
                                     className={clsx(
@@ -71,6 +71,11 @@ export default function Header() {
                                 </p>
                             </Link>
                         ))}
+
+                        <div className=" w-full h-0.5 bg-primary" />
+                        <Link to="/login">
+                            <p className="my-5 mx-5 text-4xl justify-end text-center">Login</p>
+                        </Link>
                     </div>
                 )}
             </div>

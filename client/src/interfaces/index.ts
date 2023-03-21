@@ -15,6 +15,7 @@ interface IPost {
     url: string;
     host?: IUser;
     view?: number;
+    heart?: number;
 }
 interface IStore {
     user: IUser;

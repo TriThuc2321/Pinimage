@@ -24,7 +24,7 @@ export default function ListImages({ posts, className }: ListImagesProps) {
                 {posts &&
                     posts.map((item) => (
                         <SwiperSlide key={item._id}>
-                            <img src={item.url} className="h-60 desktop:h-80 w-80" />
+                            <img src={item.url} className="w-80" />
                         </SwiperSlide>
                     ))}
             </Swiper>

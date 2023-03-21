@@ -9,3 +9,5 @@ export { default as NewPost } from './newPost';
 export { default as Discover } from './discover';
 export { default as ListImages } from './listImages';
 export { default as DotSpinner } from './dotSpinner';
+export { default as Category } from './category';
+export { default as PostCard } from './postCard';
