@@ -43,7 +43,6 @@ export const StoreProvider = ({ children }: ProviderProps) => {
                 }
                 const { email } = user;
                 const getUser: { data: IUser; status: string } = await getUserByEmail(email);
-                console.log(getUser);
                 setUser(getUser.data);
             } else {
                 setUser(INIT_USER);

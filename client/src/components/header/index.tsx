@@ -1,10 +1,17 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
+import { ArrowRightOnRectangleIcon, Bars3Icon, PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Button from '../button';
 import { useState, useEffect } from 'react';
+import { useStore } from '~/store/hooks';
 
 export default function Header() {
+    const navigate = useNavigate();
+    const { getUser } = useStore();
+    const user = getUser();
+    const auth = getAuth();
+
     const { pathname } = useLocation();
     const [showMenu, setShowMenu] = useState(false);
 
@@ -69,11 +76,14 @@ export default function Header() {
                 ))}
             </div>
 
-            <div className="hidden tablet:flex">
-                <Button className="mx-2" text="Create post" />
-                <Button className="mx-2" outline text="Login" />
-            </div>
-
+            {user._id ? (
+                <div className="hidden tablet:flex items-center">
+                    <Button className="mx-2" text="New post" onClick={() => navigate('/new-post')} />
+                    <Button className="mx-2" outline text="Logout" onClick={() => auth.signOut()} />
+                </div>
+            ) : (
+                <Button className="mx-2" text="Login" onClick={() => navigate('/login')} />
+            )}
             <div className="flex tablet:hidden">
                 <Bars3Icon width={32} height={32} onClick={() => setShowMenu(!showMenu)} />
                 {showMenu && (
