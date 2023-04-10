@@ -10,7 +10,6 @@ const Error = lazy(() => import('~/pages/error'));
 const Dashboard = lazy(() => import('~/components/dashboard'));
 const Favorite = lazy(() => import('~/components/favorite'));
 const MyPost = lazy(() => import('~/components/myPost'));
-const NewPost = lazy(() => import('~/components/newPost'));
 
 const AuthLayout = () => (
     <StoreProvider>
@@ -62,10 +61,6 @@ export default createBrowserRouter([
                                 <MyPost />
                             </Suspense>
                         ),
-                    },
-                    {
-                        path: '/new-post',
-                        element: <NewPost />,
                     },
                 ],
             },

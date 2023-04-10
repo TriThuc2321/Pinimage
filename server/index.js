@@ -51,8 +51,8 @@ mongoose
         console.log('err', err);
     });
 
-app.use('/api/v1/openAI', openAIRoute);
-app.use('/api/v1/user', userRoute);
+app.use('/api/openAI', openAIRoute);
+app.use('/api/user', userRoute);
 
 app.get('/', async (req, res) => {
     res.status(200).json({

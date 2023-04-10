@@ -524,6 +524,10 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -544,12 +548,44 @@ video {
   top: 5rem;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.bottom-32 {
+  bottom: 8rem;
+}
+
+.bottom-16 {
+  bottom: 4rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
 .-z-10 {
   z-index: -10;
 }
 
 .z-50 {
   z-index: 50;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .m-0 {
@@ -605,12 +641,28 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .flex {
@@ -653,6 +705,18 @@ video {
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-1\/3 {
+  height: 33.333333%;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -679,6 +743,18 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .w-8 {
@@ -733,8 +809,12 @@ video {
   border-radius: 0.75rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .bg-blear08 {
@@ -756,12 +836,20 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blear {
+  background-color: #1a1a1c7c;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .px-12 {
@@ -784,6 +872,11 @@ video {
   padding-right: 1.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -792,6 +885,35 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-60 {
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {
@@ -850,6 +972,26 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -858,6 +1000,16 @@ video {
 
 .outline {
   outline-style: solid;
+}
+
+.hover\:bg-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(165 65 80 / var(--tw-bg-opacity));
+}
+
+.hover\:text-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(165 65 80 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
@@ -893,12 +1045,34 @@ video {
     margin-left: 6rem;
   }
 
+  .desktop\:h-1\/2 {
+    height: 50%;
+  }
+
+  .desktop\:h-5\/6 {
+    height: 83.333333%;
+  }
+
+  .desktop\:max-h-fit {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+
+  .desktop\:min-h-fit {
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+
   .desktop\:w-1\/2 {
     width: 50%;
   }
 
   .desktop\:w-1\/3 {
     width: 33.333333%;
+  }
+
+  .desktop\:w-1\/4 {
+    width: 25%;
   }
 
   .desktop\:grid-cols-4 {
@@ -915,5 +1089,25 @@ video {
 
   .desktop\:bg-blear {
     background-color: #1a1a1c7c;
+  }
+
+  .desktop\:px-60 {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+
+  .desktop\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .desktop\:py-40 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .desktop\:px-80 {
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
 }
